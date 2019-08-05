@@ -14,7 +14,7 @@ class image_converter:
 
     def __init__(self):
         # ROS
-        self.image_pub = rospy.Publisher("image_topic_2",Image)
+        self.image_pub = rospy.Publisher("/zed/left/raw_image",Image)
         self.bridge = CvBridge()
         # zedcv2
         self.zed = Camera()

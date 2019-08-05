@@ -1,5 +1,7 @@
+from __future__ import print_function
 import numpy as np
 import cv2
+
 
 class Camera():
     def __init__(self,):
@@ -16,6 +18,8 @@ class Camera():
                 self.cap = cv2.VideoCapture(0)
             else:
                 raise "Can't reach ZED camera."
+
+            print("Open /dev/vidoe1.")
 
         # Default resolution 2K
         self.set_resolution("2K")
