@@ -1,7 +1,7 @@
 # ZED
 ## setup zed rosnode
 ```
-cd ~/catkin_ws
+cd ~/catkin_ws/src
 catkin_create_pkg zedcv2
 cd zedcv2
 mkdir scripts

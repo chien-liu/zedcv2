@@ -4,7 +4,18 @@ import cv2
 class Camera():
     def __init__(self,):
         self.cap = cv2.VideoCapture(1)
-        assert self.cap.isOpened(), "Can't reach ZED camera."
+        try:
+            assert self.cap.isOpened()
+            
+        except AssertionError:
+            ans = raw_input("Can't find /dev/video1. Open /dev/vidoe1 instead? (Y/n) ")
+            print(ans)
+            if ans == "":
+                self.cap = cv2.VideoCapture(0)
+            elif ans.lower() in ["y", "yes"]:
+                self.cap = cv2.VideoCapture(0)
+            else:
+                raise "Can't reach ZED camera."
 
         # Default resolution 2K
         self.set_resolution("2K")
