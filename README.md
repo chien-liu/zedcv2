@@ -2,9 +2,8 @@
 
 ## Highlight
 1. Modify published topic to /zed/zed_node/rgb/image_rect_color
-2. Modify rate from 10hz to 30hz    # same as 
-3. Modify resolution from 2K to 720p.
-
+2. Modify rate from 10hz to 30hz            # same as zed-ros-wrapper
+3. Modify resolution from 2K to 720p.       # same as zed-ros-wrapper
 
 
 # ZED
