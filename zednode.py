@@ -14,11 +14,11 @@ class image_converter:
 
     def __init__(self):
         # ROS
-        self.image_pub = rospy.Publisher("/zed/left/raw_image",Image)
+        self.image_pub = rospy.Publisher("/zed/zed_node/rgb/image_rect_color",Image)
         self.bridge = CvBridge()
         # zedcv2
         self.zed = Camera()
-        self.zed.set_resolution("2K")    # "2K", "1080p", "720p", "WVGA"
+        self.zed.set_resolution("720p")    # "2K", "1080p", "720p", "WVGA"
         self.zed.set_eye("left")         # "left", "right", "both"
 
     def get_image(self):
@@ -37,7 +37,7 @@ def main(args):
     
     rospy.init_node('zedcv2_raw_image', anonymous=True)
 
-    r = rospy.Rate(10) # 10hz
+    r = rospy.Rate(30) # 30hz, same as zed-ros-wrapper
     while not rospy.is_shutdown():
         ic.get_image()
         r.sleep()
