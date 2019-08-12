@@ -1,14 +1,19 @@
+2019/08/12 update
+
+## Highlight
+1. Modify published topic to /zed/zed_node/rgb/image_rect_color
+2. Modify rate from 10hz to 30hz    # same as 
+3. Modify resolution from 2K to 720p.
+
+
+
 # ZED
 ## setup zed rosnode
 ```
-cd ~/catkin_ws/src
-catkin_create_pkg zedcv2
-cd zedcv2
-mkdir scripts
-cd scripts
+cd /zedcv2/scripts     # modify zedcv2 to YOUR NODE
 git clone https://github.com/liu-chien/zedcv2.git
 cd ~/catkin_ws
-catkin_make zedcv2
+catkin_make
 ```
 
 ## Open zed node
