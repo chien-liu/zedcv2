@@ -14,7 +14,7 @@ class image_converter:
 
     def __init__(self):
         # ROS
-        self.image_pub = rospy.Publisher("/zed/zed_node/rgb/image_rect_color",Image)
+        self.image_pub = rospy.Publisher("/zed/zed_node/rgb/image_rect_color", Image, queue_size=1)
         self.bridge = CvBridge()
         # zedcv2
         self.zed = Camera()
@@ -28,7 +28,9 @@ class image_converter:
 
     def callback(self, cv2_image):
         try:
-            self.image_pub.publish(self.bridge.cv2_to_imgmsg(cv2_image, "bgr8"))
+            pass
+            ros_img = self.bridge.cv2_to_imgmsg(cv2_image, "bgr8")
+            self.image_pub.publish(ros_img)
         except CvBridgeError as e:
             print(e)
 
